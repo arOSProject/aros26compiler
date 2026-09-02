@@ -1,0 +1,58 @@
+name: Build AR OS ISO
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ar-os-iso
+  cancel-in-progress: false
+
+jobs:
+  iso:
+    name: Build bootable AR OS ISO
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+
+    steps:
+      - name: Check out AR OS
+        uses: actions/checkout@v5
+
+      - name: Free build space
+        run: |
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          df -h /
+
+      - name: Build inside Debian 13
+        run: |
+          docker run --rm --privileged \
+            -v "$GITHUB_WORKSPACE:/workspace" \
+            -w /workspace \
+            debian:trixie \
+            bash -euxo pipefail -c '
+              apt-get update
+              apt-get install -y \
+                live-build devscripts debhelper \
+                build-essential cmake ninja-build pkg-config \
+                qt6-base-dev qt6-declarative-dev qt6-wayland-dev \
+                libpam0g-dev libgl1-mesa-dev
+              ./scripts/build-iso.sh
+            '
+
+      - name: Verify ISO
+        run: sha256sum --check AR-OS-0.1.0-amd64.iso.sha256
+
+      - name: Upload ISO
+        uses: actions/upload-artifact@v4
+        with:
+          name: AR-OS-0.1.0-amd64
+          path: |
+            AR-OS-0.1.0-amd64.iso
+            AR-OS-0.1.0-amd64.iso.sha256
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error
