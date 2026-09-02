@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Files
+Comment=Browse and manage files
+Exec=ar-files
+Icon=system-file-manager
+Terminal=false
+Type=Application
+Categories=System;FileTools;FileManager;
+StartupWMClass=AR Files
+

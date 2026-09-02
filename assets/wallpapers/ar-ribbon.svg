@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f5e9ff"/>
+      <stop offset=".5" stop-color="#d9b8ff"/>
+      <stop offset="1" stop-color="#c495ff"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1=".1" y1=".2" x2=".9" y2=".8">
+      <stop stop-color="#ffffff" stop-opacity=".82"/>
+      <stop offset=".21" stop-color="#ff74da" stop-opacity=".75"/>
+      <stop offset=".48" stop-color="#8d50ff" stop-opacity=".9"/>
+      <stop offset=".78" stop-color="#efe3ff" stop-opacity=".86"/>
+      <stop offset="1" stop-color="#7d3be8" stop-opacity=".82"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#fff" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="42"/></filter>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="38" stdDeviation="35" flood-color="#6c22ba" flood-opacity=".28"/>
+    </filter>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <ellipse cx="500" cy="140" rx="630" ry="300" fill="#ffecff" opacity=".48" filter="url(#blur)"/>
+  <ellipse cx="1590" cy="900" rx="620" ry="340" fill="#9d5bff" opacity=".22" filter="url(#blur)"/>
+  <ellipse cx="1050" cy="520" rx="740" ry="340" fill="url(#glow)" opacity=".55" filter="url(#blur)"/>
+  <path d="M245 600 C440 300 700 260 950 515 C1200 775 1450 790 1685 390 C1470 190 1210 260 960 540 C710 820 450 850 245 600"
+        fill="none" stroke="url(#ribbon)" stroke-width="138" stroke-linecap="round" stroke-linejoin="round" opacity=".9" filter="url(#shadow)"/>
+  <path d="M245 600 C440 300 700 260 950 515 C1200 775 1450 790 1685 390 C1470 190 1210 260 960 540 C710 820 450 850 245 600"
+        fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-opacity=".64"/>
+  <path d="M305 635 C500 390 720 375 945 570 C1190 780 1435 735 1615 450"
+        fill="none" stroke="#4d1b9f" stroke-opacity=".2" stroke-width="24" stroke-linecap="round"/>
+</svg>

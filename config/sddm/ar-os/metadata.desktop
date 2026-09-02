@@ -1,0 +1,16 @@
+[SddmGreeterTheme]
+Name=AR OS
+Description=AR OS glass login experience
+Author=AR OS contributors
+Copyright=(c) AR OS contributors
+License=GPL-3.0-or-later
+Type=sddm-theme
+Version=0.1.0
+Website=https://example.invalid/ar-os
+Screenshot=preview.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=ar-os
+Theme-API=2.0
+

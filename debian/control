@@ -1,0 +1,55 @@
+Source: ar-os
+Section: x11
+Priority: optional
+Maintainer: AR OS contributors <aros@example.invalid>
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake (>= 3.24),
+ ninja-build,
+ pkg-config,
+ libpam0g-dev,
+ qt6-base-dev (>= 6.5),
+ qt6-declarative-dev (>= 6.5),
+ qt6-wayland-dev
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Homepage: https://example.invalid/ar-os
+
+Package: ar-os-desktop
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ accountsservice,
+ bluez,
+ brightnessctl,
+ flatpak,
+ kscreen,
+ kwin-wayland,
+ network-manager,
+ packagekit,
+ pipewire,
+ polkit-kde-agent-1,
+ qml6-module-qtquick,
+ qml6-module-qtquick-controls,
+ qml6-module-qtquick-layouts,
+ qml6-module-qtquick-window,
+ qt6-wayland,
+ sddm,
+ systemd,
+ udisks2,
+ upower,
+ wireplumber,
+ xdg-desktop-portal-kde,
+ xdg-utils,
+ xwayland
+Recommends:
+ calamares,
+ konsole,
+ power-profiles-daemon
+Description: AR OS native Wayland desktop and system applications
+ AR OS is a Qt 6/QML desktop shell and coherent set of system applications
+ running on KWin Wayland. It includes the shell, launcher, dock, notifications,
+ files, settings, software, updater, first-run setup, lock UI, and distribution
+ integration files.
+

@@ -1,0 +1,13 @@
+[Unit]
+Description=AR OS first-run setup
+After=graphical-session.target
+ConditionPathExists=!%h/.config/ar-os/oobe.json
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/ar-oobe
+Restart=no
+
+[Install]
+WantedBy=graphical-session.target
+

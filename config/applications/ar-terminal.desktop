@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=AR Terminal
+Comment=Use the command line
+Exec=ar-terminal
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=System;TerminalEmulator;
+

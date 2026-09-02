@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+mkdir -p /etc/sddm.conf.d
+if [ -f /etc/sddm.conf.d/99-ar-os-live-autologin.conf ]; then
+    chmod 0644 /etc/sddm.conf.d/99-ar-os-live-autologin.conf
+fi

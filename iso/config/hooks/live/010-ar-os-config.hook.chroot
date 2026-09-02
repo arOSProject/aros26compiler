@@ -1,0 +1,20 @@
+#!/bin/sh
+set -eu
+
+update-alternatives --set default-displaymanager /usr/bin/sddm 2>/dev/null || true
+systemctl enable sddm.service
+systemctl enable NetworkManager.service
+systemctl enable bluetooth.service
+systemctl enable fstrim.timer
+systemctl enable fwupd-refresh.timer 2>/dev/null || true
+
+plymouth-set-default-theme ar-os
+update-initramfs -u
+
+flatpak remote-add --system --if-not-exists flathub \
+    https://dl.flathub.org/repo/flathub.flatpakrepo || true
+
+mkdir -p /etc/skel/Desktop
+cp /usr/share/applications/calamares.desktop /etc/skel/Desktop/install-ar-os.desktop
+chmod +x /etc/skel/Desktop/install-ar-os.desktop
+

@@ -1,0 +1,24 @@
+#!/bin/sh
+set -eu
+
+export XDG_CURRENT_DESKTOP=AROS
+export XDG_SESSION_DESKTOP=AROS
+export XDG_SESSION_TYPE=wayland
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+
+config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
+mkdir -p "$config_dir"
+if [ ! -f "$config_dir/kwinrc" ]; then
+    cp /usr/share/ar-os/defaults/kwinrc "$config_dir/kwinrc"
+fi
+
+kwin_binary="$(command -v kwin_wayland || true)"
+if [ -z "$kwin_binary" ]; then
+    echo "AR OS: kwin_wayland is required." >&2
+    exit 1
+fi
+
+exec "$kwin_binary" --xwayland --no-lockscreen \
+    --exit-with-session /usr/libexec/ar-os/ar-session-child
+

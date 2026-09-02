@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#090637"/>
+      <stop offset=".55" stop-color="#2c1458"/>
+      <stop offset="1" stop-color="#ca71a8"/>
+    </linearGradient>
+    <linearGradient id="city" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#1c164d"/>
+      <stop offset="1" stop-color="#05051d"/>
+    </linearGradient>
+    <filter id="b"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <ellipse cx="920" cy="650" rx="930" ry="245" fill="#e78ac5" opacity=".22" filter="url(#b)"/>
+  <path d="M0 860 100 780 180 815 290 710 400 795 520 665 620 760 720 620 840 770 930 590 1020 720 1120 560 1230 700 1340 595 1450 735 1560 625 1700 750 1810 660 1920 720V1080H0Z" fill="url(#city)" opacity=".94"/>
+  <g fill="#ffb9e9" opacity=".72">
+    <circle cx="210" cy="420" r="3"/><circle cx="410" cy="280" r="2"/><circle cx="720" cy="370" r="3"/><circle cx="970" cy="220" r="2"/><circle cx="1310" cy="330" r="3"/><circle cx="1650" cy="250" r="2"/>
+  </g>
+</svg>
+

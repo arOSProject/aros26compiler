@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=AR Updater
+Comment=Install security and software updates
+Exec=ar-updater
+Icon=system-software-update
+Terminal=false
+Type=Application
+Categories=Settings;System;
+

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Screenshot
+Comment=Capture the screen, a window, or a region
+Exec=spectacle -r
+Icon=spectacle
+Terminal=false
+Type=Application
+Categories=Graphics;Utility;
+

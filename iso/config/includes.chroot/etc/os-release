@@ -1,0 +1,14 @@
+PRETTY_NAME="AR OS 0.1 Developer Preview"
+NAME="AR OS"
+VERSION_ID="0.1"
+VERSION="0.1 Developer Preview"
+VERSION_CODENAME="ribbon"
+ID=aros
+ID_LIKE=debian
+HOME_URL="https://example.invalid/ar-os"
+SUPPORT_URL="https://example.invalid/ar-os/support"
+BUG_REPORT_URL="https://example.invalid/ar-os/issues"
+BUILD_ID="0.1.0"
+VARIANT="Desktop"
+VARIANT_ID=desktop
+

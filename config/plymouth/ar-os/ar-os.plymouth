@@ -1,0 +1,9 @@
+[Plymouth Theme]
+Name=AR OS
+Description=AR OS boot splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/ar-os
+ScriptFile=/usr/share/plymouth/themes/ar-os/ar-os.script
+

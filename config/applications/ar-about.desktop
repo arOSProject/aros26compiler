@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=About AR OS
+Comment=System and hardware information
+Exec=ar-about
+Icon=help-about
+Terminal=false
+Type=Application
+Categories=Settings;System;
+

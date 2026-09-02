@@ -1,0 +1,12 @@
+[Compositing]
+Enabled=true
+
+[Plugins]
+arshellEnabled=true
+blurEnabled=true
+contrastEnabled=true
+slideEnabled=true
+
+[Windows]
+BorderlessMaximizedWindows=true
+

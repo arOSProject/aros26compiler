@@ -1,0 +1,17 @@
+/build/
+/build-*/
+/build-debian/
+/.build/
+/AR-OS-*.iso
+/AR-OS-*.iso.sha256
+/ar-os-test.qcow2
+/ar-os-OVMF_VARS.fd
+/iso/.build/
+/iso/binary/
+/iso/cache/
+/iso/chroot/
+/iso/config/packages.chroot/*.deb
+/iso/live-image-*.iso
+*.user
+*.swp
+

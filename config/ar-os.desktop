@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=AR OS
+Comment=AR OS Wayland desktop session
+Exec=/usr/libexec/ar-os/ar-session
+Type=Application
+DesktopNames=AROS
+

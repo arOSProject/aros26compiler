@@ -1,0 +1,26 @@
+---
+componentName:  ar-os
+welcomeStyleCalamares: true
+strings:
+  productName:         AR OS
+  shortProductName:    AR OS
+  version:             0.1.0
+  shortVersion:        0.1
+  versionedName:       AR OS 0.1
+  shortVersionedName:  AR OS 0.1
+  bootloaderEntryName: AR OS
+  productUrl:          https://example.invalid/ar-os
+  supportUrl:          https://example.invalid/ar-os/support
+  knownIssuesUrl:      https://example.invalid/ar-os/issues
+  releaseNotesUrl:     https://example.invalid/ar-os/releases/0.1
+images:
+  productLogo:         "logo.svg"
+  productIcon:         "logo.svg"
+  productWelcome:      "welcome.svg"
+slideshow:             "show.qml"
+style:
+  sidebarBackground:   "#c9b5eb"
+  sidebarText:         "#28243a"
+  sidebarTextSelect:   "#ffffff"
+  sidebarTextHighlight:"#8d4cff"
+

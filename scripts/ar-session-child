@@ -1,0 +1,34 @@
+#!/bin/sh
+set -eu
+
+dbus-update-activation-environment --systemd \
+    DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE
+systemctl --user import-environment \
+    DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE || true
+
+if command -v /usr/libexec/polkit-kde-authentication-agent-1 >/dev/null 2>&1; then
+    /usr/libexec/polkit-kde-authentication-agent-1 &
+elif command -v /usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 >/dev/null 2>&1; then
+    /usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 &
+fi
+
+systemctl --user start xdg-desktop-portal.service 2>/dev/null || true
+systemctl --user start xdg-desktop-portal-kde.service 2>/dev/null || true
+
+if command -v systemd-cat >/dev/null 2>&1; then
+    systemd-cat --identifier=ar-shell ar-shell &
+else
+    ar-shell &
+fi
+shell_pid=$!
+
+oobe_file="${XDG_CONFIG_HOME:-$HOME/.config}/ar-os/oobe.json"
+if ! grep -q '"completed"[[:space:]]*:[[:space:]]*true' "$oobe_file" 2>/dev/null; then
+    ar-oobe &
+fi
+
+if command -v dex >/dev/null 2>&1; then
+    dex --autostart --environment AROS &
+fi
+
+wait "$shell_pid"

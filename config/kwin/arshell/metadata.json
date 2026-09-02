@@ -1,0 +1,15 @@
+{
+  "KPlugin": {
+    "Id": "arshell",
+    "Name": "AR Shell window roles",
+    "Description": "Keeps AR desktop surfaces in their compositor layers",
+    "Version": "0.1.0",
+    "License": "GPL-3.0-or-later",
+    "Authors": [
+      { "Name": "AR OS contributors" }
+    ]
+  },
+  "X-Plasma-API": "javascript",
+  "X-Plasma-MainScript": "code/main.js"
+}
+
