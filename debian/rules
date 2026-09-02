@@ -4,5 +4,6 @@
 	dh $@ --buildsystem=cmake --builddirectory=build-debian
 
 override_dh_auto_configure:
-	dh_auto_configure -- -GNinja -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF
+	dh_auto_configure -- -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF
+
 
