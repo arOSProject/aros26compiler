@@ -24,6 +24,7 @@ if [ -z "$package" ]; then
     exit 1
 fi
 
+mkdir -p "$iso_dir/config/packages.chroot"
 cp "$package" "$iso_dir/config/packages.chroot/"
 cd "$iso_dir"
 lb clean --purge
@@ -35,4 +36,5 @@ if [ -n "$image" ]; then
     mv "$image" "$project_dir/AR-OS-0.1.0-amd64.iso"
     sha256sum "$project_dir/AR-OS-0.1.0-amd64.iso" > "$project_dir/AR-OS-0.1.0-amd64.iso.sha256"
 fi
+
 
