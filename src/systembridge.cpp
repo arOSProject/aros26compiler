@@ -10,6 +10,7 @@
 #include <QFileInfo>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QLocale>
 #include <QProcess>
 #include <QRegularExpression>
 #include <QSaveFile>
@@ -392,7 +393,7 @@ QVariantList SystemBridge::listDirectory(const QString &path) const
                               {QStringLiteral("path"), info.absoluteFilePath()},
                               {QStringLiteral("isDir"), info.isDir()},
                               {QStringLiteral("size"), info.isDir() ? QString() : humanSize(info.size())},
-                              {QStringLiteral("modified"), info.lastModified().toString(Qt::DefaultLocaleShortDate)},
+                              {QStringLiteral("modified"), QLocale().toString(info.lastModified(), QLocale::ShortFormat)},
                               {QStringLiteral("hidden"), info.isHidden()}};
     }
     return result;

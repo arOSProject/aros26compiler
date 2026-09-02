@@ -125,6 +125,8 @@ if(BUILD_TESTING)
             src/searchprovider.h
         )
         target_compile_definitions(ar-core-tests PRIVATE AR_OS_VERSION="${PROJECT_VERSION}")
+        target_include_directories(ar-core-tests PRIVATE
+            ${CMAKE_CURRENT_SOURCE_DIR}/src)
         target_link_libraries(ar-core-tests PRIVATE
             Qt6::Core Qt6::DBus Qt6::Gui Qt6::Network Qt6::Test)
         add_test(NAME ar-core-tests COMMAND ar-core-tests)
