@@ -33,8 +33,9 @@ lb build
 
 image="$(find . -maxdepth 1 -name 'live-image-amd64*.iso' -print -quit)"
 if [ -n "$image" ]; then
-    mv "$image" "$project_dir/AR-OS-0.1.0-amd64.iso"
+    cp -L "$image" "$project_dir/AR-OS-0.1.0-amd64.iso"
     sha256sum "$project_dir/AR-OS-0.1.0-amd64.iso" > "$project_dir/AR-OS-0.1.0-amd64.iso.sha256"
 fi
+
 
 
